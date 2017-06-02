@@ -9,7 +9,7 @@ Features:
 
 - Killstreak
 - Multiarena
-- Multilang (English, German, Franze)
+- Multilang (English, German, Franze, Russian )
 - Joinsign
 - Custom Messages
 - Echantment
