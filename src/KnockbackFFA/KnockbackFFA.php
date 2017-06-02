@@ -17,7 +17,6 @@ use pocketmine\level\sound\ClickSound;
 use pocketmine\item\enchantment\Enchantment;
 use pocketmine\entity\Effect;
 
-use pocketmine\command\{Command, CommandSender};
 use pocketmine\event\block\{SignChangeEvent, BlockBreakEvent, BlockPlaceEvent};
 use pocketmine\event\player\{PlayerInteractEvent, PlayerMoveEvent, PlayerDropItemEvent, PlayerQuitEvent, PlayerJoinEvent, PlayerExhaustEvent};
 use pocketmine\event\entity\{EntityDamageByEntityEvent, EntityDamageEvent, EntityLevelChangeEvent};
@@ -90,7 +89,7 @@ class KnockbackFFA extends PluginBase implements Listener{
 	
 	public function onSignCreate(SignChangeEvent $event){
 		if($event->getPlayer()->hasPermission("knockbackffa.admin")){
-			if($event->getLine(0) == "KnockbackFFA"){
+			if(strtolower($event->getLine(0)) == "knockbackffa"){
 				if(in_array($event->getLine(1), $this->arenas)){
 					
 					$event->setLine(0, $this->signprefix);
