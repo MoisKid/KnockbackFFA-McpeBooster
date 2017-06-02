@@ -217,7 +217,7 @@ class KnockbackFFA extends PluginBase implements Listener{
 		$entity = $event->getEntity();
 		if($entity instanceof Player){
 			$player = $entity;
-			//$welt = $event->getOrigin()->getFolderName();
+			$welt = $event->getOrigin()->getFolderName();
 			$arena = $event->getTarget()->getFolderName();
 			if(in_array($arena, $this->arenas)){
 		
@@ -225,6 +225,15 @@ class KnockbackFFA extends PluginBase implements Listener{
 				$pk->worldImmutable = true;
 				$pk->autoJump = false;
 				$player->dataPacket($pk);				
+			}elseif(in_array($welt, $this->arenas)){
+				$pk = new AdventureSettingsPacket();
+				$pk->worldImmutable = false;
+				$pk->autoJump = true;
+				$player->dataPacket($pk);
+				$player->setHealth(20);
+				$player->setFood(20);
+				$player->getInventory()->clearAll();
+				$player->removeAllEffects();
 			}
 		}
 	}
