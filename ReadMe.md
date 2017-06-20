@@ -4,6 +4,10 @@
 
 <br>
 
+<H1>Explanations</H1>
+
+KnockbackFFA, also known as KnockIT, is a mini-game, which is about knocking other players into nothingness. And so a possible High Killstreak to reach.
+
 <H1>News:</H1>
 
 The plugin is now complete and has been released
