@@ -32,19 +32,19 @@ Change the language easily in the config.yml
 
 <H1>Features:</H1>
 
-- Killstreak
+- KillStreak
 
-- Multiarena
+- MultiArena
 
-- Multilang (English, German, Franze, Russian)
+- MultiLang (English, German, French, Russian)
 
-- Joinsign
+- JoinSign
 
 - Custom Messages
 
-- Echantment
+- Enchantment
 
-- Spawnprotection
+- Spawn Protection
 
 <br>
 
