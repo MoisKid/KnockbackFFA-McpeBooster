@@ -11,7 +11,7 @@ class checkLevel extends PluginTask {
 		$this->plugin = $plugin;
 	}
 	
-	public function onRun($currentTick){
+	public function onRun(int $currentTick){
 		$this->plugin->checkLevelTask();
 	}
 }
