@@ -222,11 +222,15 @@ class KnockbackFFA extends PluginBase implements Listener{
 			if(in_array($arena, $this->arenas)){
 		
 				$pk = new AdventureSettingsPacket();
+				$pk->userPermission = 0;
+                                $pk->entityUniqueId = $player->getId();
 				$pk->worldImmutable = true;
 				$pk->autoJump = false;
 				$player->dataPacket($pk);				
 			}elseif(in_array($welt, $this->arenas)){
 				$pk = new AdventureSettingsPacket();
+				$pk->userPermission = 0;
+                                $pk->entityUniqueId = $player->getId();
 				$pk->worldImmutable = false;
 				$pk->autoJump = true;
 				$player->dataPacket($pk);
