@@ -4,3 +4,8 @@ version: 1.1.0
 api: 3.0.0-ALPHA9
 author: McpeBooster
 website: twitter.com/McpeBooster
+commands:
+  knockbackffa:
+    description: Join KnockbackFFA directly per Command
+  kb
+    description: Join KnockbackFFA directly per Command
