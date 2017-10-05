@@ -403,33 +403,33 @@ class KnockbackFFA extends PluginBase implements Listener{
 		}
 	}
 	
-	public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
+	public function onCommand(CommandSender $sender, Command $command, $label, array $args) : bool{
 		if(strtolower($cmd->getName()) === "knockbackffa" || strtolower($cmd->getName()) === "kbf"){
 			if($sender instanceof Player){
 				$player = $sender;
-				if(!empty($args[0]) && !empty($args[1]){
+				if(!empty($args[0]) && !empty($args[1])){
 					$world = $player->getLevel()->getFolderName();
 					$allarenas = $this->getConfig()->get("Arenas");
 					
 					if(!in_array($args[1], $allarenas)){
 						$player->sendMessage("Arena not exist!");
-						return;
+						return false;
 				    }
 					if($args[0] == "join"){
 						$this->ArenaJoin($player, $args[1]);
-						return;
+						return true;
 					
 					}elseif($args[0] == "leave" or $args[0] == "quit"){
 						$player->teleport($this->getServer()->getDefaultLevel()->getSafeSpawn());
-						return;
+						return true;
 					}
 					
 				}
 				$player->sendMessage($this->prefix. " Syntax: /kbf <join/quit>!");
-				return;
+				return false;
 			}
 			$sender->sendMessage($this->prefix. " §7by §6McpeBooster§7!");
-			return;
+			return false;
 		}
 	}
 }
