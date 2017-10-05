@@ -7,5 +7,5 @@ website: twitter.com/McpeBooster
 commands:
   knockbackffa:
     description: Join KnockbackFFA directly per Command
-  kb
+  kbf:
     description: Join KnockbackFFA directly per Command
