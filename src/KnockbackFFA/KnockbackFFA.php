@@ -17,6 +17,8 @@ use pocketmine\level\sound\ClickSound;
 use pocketmine\item\enchantment\Enchantment;
 use pocketmine\entity\Effect;
 
+use pocketmine\command\{Command, CommandSender};
+
 use pocketmine\event\block\{SignChangeEvent, BlockBreakEvent, BlockPlaceEvent};
 use pocketmine\event\player\{PlayerInteractEvent, PlayerMoveEvent, PlayerDropItemEvent, PlayerQuitEvent, PlayerJoinEvent, PlayerExhaustEvent};
 use pocketmine\event\entity\{EntityDamageByEntityEvent, EntityDamageEvent, EntityLevelChangeEvent};
@@ -398,6 +400,36 @@ class KnockbackFFA extends PluginBase implements Listener{
 				$level = $this->lastKillstreak[$name];
 				$p->sendPopup("§6".$level);
 			}
+		}
+	}
+	
+	public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
+		if(strtolower($cmd->getName()) === "knockbackffa" || strtolower($cmd->getName()) === "kbf"){
+			if($sender instanceof Player){
+				$player = $sender;
+				if(!empty($args[0]) && !empty($args[1]){
+					$world = $player->getLevel()->getFolderName();
+					$allarenas = $this->getConfig()->get("Arenas");
+					
+					if(!in_array($args[1], $allarenas)){
+						$player->sendMessage("Arena not exist!");
+						return;
+				    }
+					if($args[0] == "join"){
+						$this->ArenaJoin($player, $args[1]);
+						return;
+					
+					}elseif($args[0] == "leave" or $args[0] == "quit"){
+						$player->teleport($this->getServer()->getDefaultLevel()->getSafeSpawn());
+						return;
+					}
+					
+				}
+				$player->sendMessage($this->prefix. " Syntax: /kbf <join/quit>!");
+				return;
+			}
+			$sender->sendMessage($this->prefix. " §7by §6McpeBooster§7!");
+			return;
 		}
 	}
 }
