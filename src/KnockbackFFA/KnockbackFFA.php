@@ -404,7 +404,7 @@ class KnockbackFFA extends PluginBase implements Listener{
 	}
 	
 	public function onCommand(CommandSender $sender, Command $command, $label, array $args) : bool{
-		if(strtolower($cmd->getName()) === "knockbackffa" || strtolower($cmd->getName()) === "kbf"){
+		if(strtolower($command->getName()) === "knockbackffa" || strtolower($command->getName()) === "kbf"){
 			if($sender instanceof Player){
 				$player = $sender;
 				if(!empty($args[0]) && !empty($args[1])){
