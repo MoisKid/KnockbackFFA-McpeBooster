@@ -8,6 +8,10 @@ KnockbackFFA, also known as KnockIT, is a mini-game, which is about knocking oth
 
 <H1>News:</H1>
 
+Addet wiki: https://github.com/McpeBooster/KnockbackFFA-McpeBooster/wiki
+
+<br>
+
 The plugin is now complete and has been released
 
 <br>
