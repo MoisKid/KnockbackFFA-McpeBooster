@@ -407,19 +407,21 @@ class KnockbackFFA extends PluginBase implements Listener{
 		$inv->clearAll();
 		$item = Item::get($waffe);
 		$enchantment = Enchantment::getEnchantment(20);
-		$enchantment->setLevel(10);
-		$item->addEnchantment($enchantment);
+		if(!is_null($enchantment)){
+			$enchantment->setLevel(10);
+			$item->addEnchantment($enchantment);
+		}
+		
 		$inv->setItem(0, $item);
 		$effect = Effect::getEffect(1);
-		$effect->setAmplifier(1)->setVisible(false)->setDuration(10000000000);
+		$effect->setAmplifier(1)->setVisible(false)->setDuration(99999);
 		$player->addEffect($effect);
 		$level = $player->getLevel();
 		
 		$effect = Effect::getEffect(8);
-		$effect->setAmplifier(1)->setVisible(false)->setDuration(10000000000);
+		$effect->setAmplifier(1)->setVisible(false)->setDuration(99999);
 		$player->addEffect($effect);
-		$level = $player->getLevel();
-		$level->addSound(new ClickSound($player));
+		$player->getLevel()->addSound(new ClickSound($player));
 	}
 	
 	#Task
