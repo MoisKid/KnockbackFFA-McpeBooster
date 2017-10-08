@@ -118,24 +118,6 @@ class KnockbackFFA extends PluginBase implements Listener{
 		}
 		
 		return false;
-	}
-	
-	/**
-	* @param Player $player
-	* @param $line1
-	* @param $line2
-	*/
-	
-	public function Title(Player $player, string $line1, string $line2){
-		if($this->titlestatus){
-			if($this->getServer()->getName() == "PocketMine-MP"){
-				$player->addTitle($line1, $line2);
-				return;
-			}else{
-				$player->sendTitle($line1, $line2);
-			return;
-			}
-		}
 	}	
 	
 	#Events
@@ -374,7 +356,7 @@ class KnockbackFFA extends PluginBase implements Listener{
 			$player->teleport($level->getSafeSpawn());
 			
 			if($this->lastDmg[$name] == "emp ty"){		
-				$this->Title($player, "§cDeath", "");
+				$player->addTitle("§cDeath", "");
 				$player->sendMessage($this->prefix.$this->getLanguage()->get("player.void"));
 			}else{
 				$dname = $this->lastDmg[$name];
@@ -392,12 +374,12 @@ class KnockbackFFA extends PluginBase implements Listener{
 						$p->sendMessage($this->prefix. $msg);
 					}
 				}
-				$this->Title($player, "§cDeath", $damager->getName());
+				$player->addTitle("§cDeath", $damager->getName());
 				$msg = $this->getLanguage()->get("player.death");
 				$msg = str_replace("{player}", $damager->getName(), $msg);
 				$player->sendMessage($this->prefix.$msg);
 				
-				$this->Title($damager, "§aKill", $player->getName());
+				$damager->addTitle("§aKill", $player->getName());
 				$msg = $this->getLanguage()->get("player.kill");
 				$msg = str_replace("{player}", $player->getName(), $msg);
 				$damager->sendMessage($this->prefix.$msg);
@@ -429,13 +411,13 @@ class KnockbackFFA extends PluginBase implements Listener{
 		$item->addEnchantment($enchantment);
 		$inv->setItem(0, $item);
 		$effect = Effect::getEffect(1);
-        $effect->setAmplifier(1)->setVisible(false)->setDuration(10000000000);
-        $player->addEffect($effect);
+		$effect->setAmplifier(1)->setVisible(false)->setDuration(10000000000);
+		$player->addEffect($effect);
 		$level = $player->getLevel();
 		
 		$effect = Effect::getEffect(8);
-        $effect->setAmplifier(1)->setVisible(false)->setDuration(10000000000);
-        $player->addEffect($effect);
+		$effect->setAmplifier(1)->setVisible(false)->setDuration(10000000000);
+		$player->addEffect($effect);
 		$level = $player->getLevel();
 		$level->addSound(new ClickSound($player));
 	}
