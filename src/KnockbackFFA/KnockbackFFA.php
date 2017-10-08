@@ -408,7 +408,8 @@ class KnockbackFFA extends PluginBase implements Listener{
 		$item = Item::get($waffe);
 		$enchantment = Enchantment::getEnchantment(20);
 		if(!is_null($enchantment)){
-			$enchantment->setLevel(10);
+			$enchantment = new Enchantment(Enchantment::KNOCKBACK, "Knockback", 10, Enchantment::ACTIVATION_HELD, 0);
+			//$enchantment->setLevel(10);
 			$item->addEnchantment($enchantment);
 		}
 		
