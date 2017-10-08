@@ -433,8 +433,10 @@ class KnockbackFFA extends PluginBase implements Listener{
 			$welt = $p->getLevel()->getFolderName();
 			if(in_array($welt, $this->arenas)){
 				$name = strtolower($p->getName());
-				$level = $this->lastKillstreak[$name];
-				$p->sendPopup("§6".$level);
+				if(isset($this->lastKillstreak[$name])){
+					$level = $this->lastKillstreak[$name];
+					$p->sendPopup("§6".$level);
+				}
 			}
 		}
 	}
