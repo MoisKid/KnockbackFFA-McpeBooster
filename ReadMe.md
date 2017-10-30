@@ -1,4 +1,4 @@
-<H1>Pocketmine KnockbackFFA Plugin by @McpeBooster</H1>
+# Pocketmine KnockbackFFA Plugin by @McpeBooster
 
 <br>
 
@@ -6,7 +6,7 @@
 
 KnockbackFFA, also known as KnockIT, is a mini-game, which is about knocking other players into nothingness. And so a possible High Killstreak to reach.
 
-<H1>News:</H1>
+# News:
 
 Addet AutoUpdater
 
@@ -24,7 +24,7 @@ Change the language easily in the config.yml
 
 <br>
 
-<H1>Phar:</H1>
+# Phar:
 
 get the latest .phar: http://McpeBooster.tk/plugins
 
@@ -44,7 +44,7 @@ get the latest .phar: http://McpeBooster.tk/plugins
 
 <br>
 
-<H1>Features:</H1>
+# Features:
 
 - KillStreak
 
@@ -64,7 +64,7 @@ get the latest .phar: http://McpeBooster.tk/plugins
 
 <br>
 
-<H1>Contact details:</H1>
+# Contact details:
 
 Twitter: https://twitter.com/McpeBooster
 
