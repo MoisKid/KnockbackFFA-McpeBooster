@@ -13,8 +13,11 @@ use pocketmine\lang\BaseLang;
 use pocketmine\math\Vector3;
 use pocketmine\item\Item;
 use pocketmine\level\sound\ClickSound;
-use pocketmine\item\enchantment\Enchantment;
 use pocketmine\entity\Effect;
+use pocketmine\item\enchantment\{
+    Enchantment,
+    EnchantmentInstance
+};
 use pocketmine\command\{
     Command,
     CommandSender
