@@ -74,7 +74,7 @@ class KnockbackFFA extends PluginBase implements Listener {
             $level->stopTime();
         }
 
-        $this->getServer()->getScheduler()->scheduleRepeatingTask(new checkLevel($this), 20);
+        $this->getScheduler()->scheduleRepeatingTask(new checkLevel($this), 20);
     }
 
     public function onLoad() {
@@ -418,18 +418,13 @@ class KnockbackFFA extends PluginBase implements Listener {
      */
 
     private function giveKit(Player $player) {
-        $waffe = 280;
 
         $player->setHealth(20);
         $player->setFood(20);
         $inv = $player->getInventory();
         $inv->clearAll();
-        $item = Item::get($waffe);
         
-        $enchantment = Enchantment::getEnchantment(12);
-        $level = 10;
-        $knockback = new EnchantmentInstance($enchantment, $level);
-        $item->addEnchantment($knockback);
+        Item::get(280, 0, 1)->addEnchantment(new EnchantmentInstance(Enchantment::getEnchantment(Enchantment::KNOCKBACK), 2));
 
         $inv->setItem(0, $item);
         $effect = Effect::getEffect(1);
