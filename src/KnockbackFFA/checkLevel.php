@@ -2,12 +2,11 @@
 
 namespace KnockbackFFA;
 
-use pocketmine\scheduler\PluginTask;
+use pocketmine\scheduler\Task;
 
-class checkLevel extends PluginTask {
+class checkLevel extends Task {
 	
 	public function __construct(KnockbackFFA $plugin){
-		parent::__construct($plugin);
 		$this->plugin = $plugin;
 	}
 	
